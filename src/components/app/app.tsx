@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './app.sass';
+import checkUpperCase from '../../utils';
 
 interface IError {
   textError: string;
@@ -30,7 +31,7 @@ function App() {
       setError({ textError: 'Заполните пустые поля', value: true });
     } else if (password.length < 8 || repeatPassword.length < 8) {
       setError({ textError: 'Пароль должен содержать не менее 8 символов', value: true });
-    } else if (!password.match(/[A-Z]/)) {
+    } else if (checkUpperCase(password) !== 1) {
       setError({ textError: 'Пароль должен содержать одну заглавную букву', value: true });
     } else if (password !== repeatPassword) {
       setError({ textError: 'Значения полей не совпадают', value: true });
