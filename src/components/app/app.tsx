@@ -46,7 +46,7 @@ function App() {
       <form>
         <label htmlFor="password">
           Пароль
-          <input type="text" id="password" onChange={handlerPassword} value={password} required />
+          <input type="text" id="password" onChange={handlerPassword} value={password} />
         </label>
         <label htmlFor="repeat-password">
           Повторите пароль
@@ -55,7 +55,6 @@ function App() {
             id="repeat-password"
             onChange={handlerRepeatPassword}
             value={repeatPassword}
-            required
           />
         </label>
         <div>
